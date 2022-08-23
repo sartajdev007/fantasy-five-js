@@ -1,4 +1,5 @@
 // player select function
+
 // common functions
 function getInputValueById(playerName, btn) {
     const liLength = calculatePlayer();
