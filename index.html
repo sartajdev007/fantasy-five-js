@@ -117,7 +117,6 @@
                             <h3>Selected V</h3>
                             <hr>
                             <ol id="player-list">
-
                             </ol>
                         </div>
                     </div>
@@ -127,14 +126,15 @@
                             <hr>
                             <div>
                                 <span class="pe-2">Per Player</span>
-                                <input type="text">
+                                <input id="per-player-cost" type="text">
                             </div>
                             <div class="pt-4 text-center">
-                                <button type="button"
+                                <button id="per-player-btn" type="button"
                                     class="btn btn-primary btn-lg px-5 py-2 fw-semibold">Calculate</button>
                             </div>
                             <div class="pt-4">
-                                <p class="fs-5">Player Expenses <span class="ps-3">$<span>0000</span></span></p>
+                                <p class="fs-5">Player Expenses <span class="ps-3">$<span
+                                            id="player-expense">0000</span></span></p>
                             </div>
                             <div>
                                 <span class="pe-2">Manager</span>
@@ -145,7 +145,8 @@
                                 <input type="text">
                             </div>
                             <div class="pt-4 text-center">
-                                <button type="button" class="btn btn-primary btn-lg px-5 py-2 fw-semibold">Calculate
+                                <button id="total-cost-btn" type="button"
+                                    class="btn btn-primary btn-lg px-5 py-2 fw-semibold">Calculate
                                     Total</button>
                             </div>
                             <div class="pt-4">

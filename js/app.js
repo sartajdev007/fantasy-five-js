@@ -1,3 +1,4 @@
+// player select function
 function getInputValueById(playerName) {
     const playerList = document.getElementById('player-list');
     const li = document.createElement('li');
@@ -37,3 +38,16 @@ document.getElementById('player-six-btn').addEventListener('click', function () 
     const btnDisable = document.getElementById('player-six-btn');
     btnDisable.disabled = true;
 })
+
+// calculate total cost code
+
+document.getElementById('per-player-btn').addEventListener('click', function () {
+    const perPlayerCost = document.getElementById('per-player-cost');
+    const getPlayerCost = parseInt(perPlayerCost.value);
+    let totalPlayerCost = getPlayerCost * 5;
+    const playerCost = document.getElementById('player-expense')
+    playerCost.innerText = totalPlayerCost;
+    perPlayerCost.value = '';
+})
+
+document.getElementById('total-cost-btn')
