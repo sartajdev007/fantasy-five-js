@@ -13,7 +13,7 @@ function getInputValueById(playerName, btn) {
         btnDisable.disabled = true;
     }
     else {
-        alert('Sorry,mate!!Cannot let you add more than 5');
+        alert('Sorry,mate!!Cannot let you add more than 5 players');
     }
 }
 
@@ -62,17 +62,13 @@ let totalPlayerExpense = 0;
 // calculate total cost code
 document.getElementById('per-player-btn').addEventListener('click', function () {
     const perPlayerCost = document.getElementById('per-player-cost');
-    if (typeof perPlayerCost == 'number') {
-        let totalPlayerCost = getPlayerCost * calculatePlayer();
-        const playerCost = document.getElementById('player-expense');
-        playerCost.innerText = totalPlayerCost;
-        totalPlayerExpense = totalPlayerCost;
-        perPlayerCost.value = '';
-        return totalPlayerCost;
-    }
-    else {
-        alert('Input type not reconized');
-    }
+    const getPlayerCost = parseInt(perPlayerCost.value)
+    let totalPlayerCost = getPlayerCost * calculatePlayer();
+    const playerCost = document.getElementById('player-expense');
+    playerCost.innerText = totalPlayerCost;
+    totalPlayerExpense = totalPlayerCost;
+    perPlayerCost.value = '';
+    return totalPlayerCost;
 })
 
 document.getElementById('total-cost-btn').addEventListener('click', function () {
