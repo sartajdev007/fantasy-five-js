@@ -1,53 +1,67 @@
 // player select function
-function getInputValueById(playerName) {
+let totalPlayerExpense = 0;
+function getInputValueById(playerName, btn) {
+    const liLength = calculatePlayer();
     const playerList = document.getElementById('player-list');
-    const li = document.createElement('li');
-    li.innerText = document.getElementById(playerName).innerText;
-    playerList.appendChild(li);
+    if (liLength <= 4) {
+        const li = document.createElement('li');
+        li.innerText = document.getElementById(playerName).innerText;
+        playerList.appendChild(li);
+        const btnDisable = document.getElementById(btn);
+        btnDisable.style.background = '#1695c0';
+        btnDisable.disabled = true;
+    }
+    else {
+        alert('Cannot add more than 5');
+    }
 }
 
+function calculatePlayer() {
+    const liLength = document.querySelectorAll('#player-list li').length;
+    return liLength;
+}
+
+function btnDisable(boolean) {
+    return boolean;
+}
 
 document.getElementById('player-one-btn').addEventListener('click', function () {
-    const playerAdd = getInputValueById('player-one');
-    const btnDisable = document.getElementById('player-one-btn');
-    btnDisable.disabled = true;
+    getInputValueById('player-one', 'player-one-btn');
 })
 document.getElementById('player-two-btn').addEventListener('click', function () {
-    const playerAdd = getInputValueById('player-two');
-    const btnDisable = document.getElementById('player-two-btn');
-    btnDisable.disabled = true;
-
+    getInputValueById('player-two', 'player-two-btn');
 })
 document.getElementById('player-three-btn').addEventListener('click', function () {
-    const playerAdd = getInputValueById('player-three');
-    const btnDisable = document.getElementById('player-three-btn');
-    btnDisable.disabled = true;
+    getInputValueById('player-three', 'player-three-btn');
 })
 document.getElementById('player-four-btn').addEventListener('click', function () {
-    const playerAdd = getInputValueById('player-four');
-    const btnDisable = document.getElementById('player-four-btn');
-    btnDisable.disabled = true;
+    getInputValueById('player-four', 'player-four-btn');
 })
 document.getElementById('player-five-btn').addEventListener('click', function () {
-    const playerAdd = getInputValueById('player-five');
-    const btnDisable = document.getElementById('player-five-btn');
-    btnDisable.disabled = true;
+    getInputValueById('player-five', 'player-five-btn');
 })
 document.getElementById('player-six-btn').addEventListener('click', function () {
-    const playerAdd = getInputValueById('player-six');
-    const btnDisable = document.getElementById('player-six-btn');
-    btnDisable.disabled = true;
+    getInputValueById('player-six', 'player-six-btn');
 })
 
 // calculate total cost code
-
 document.getElementById('per-player-btn').addEventListener('click', function () {
     const perPlayerCost = document.getElementById('per-player-cost');
     const getPlayerCost = parseInt(perPlayerCost.value);
-    let totalPlayerCost = getPlayerCost * 5;
-    const playerCost = document.getElementById('player-expense')
+    let totalPlayerCost = getPlayerCost * calculatePlayer();
+    const playerCost = document.getElementById('player-expense');
     playerCost.innerText = totalPlayerCost;
+    totalPlayerExpense = totalPlayerCost;
     perPlayerCost.value = '';
+    return totalPlayerCost;
 })
 
-document.getElementById('total-cost-btn')
+document.getElementById('total-cost-btn').addEventListener('click', function () {
+    const managerCost = document.getElementById('manager-cost');
+    const getManagerCost = parseInt(managerCost.value);
+    const coachCost = document.getElementById('coach-cost');
+    const getCoachCost = parseInt(coachCost.value);
+    let totalExpense = getManagerCost + getCoachCost + totalPlayerExpense;
+    const totalSpend = document.getElementById('total-spend');
+    totalSpend.innerText = totalExpense;
+})
