@@ -73,4 +73,6 @@ document.getElementById('total-cost-btn').addEventListener('click', function () 
     let totalExpense = getManagerCost + getCoachCost + totalPlayerExpense;
     const totalSpend = document.getElementById('total-spend');
     totalSpend.innerText = totalExpense;
+    managerCost.value = '';
+    coachCost.value = '';
 })
