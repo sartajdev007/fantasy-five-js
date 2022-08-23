@@ -1,5 +1,5 @@
 // player select function
-let totalPlayerExpense = 0;
+// common functions
 function getInputValueById(playerName, btn) {
     const liLength = calculatePlayer();
     const playerList = document.getElementById('player-list');
@@ -24,6 +24,7 @@ function calculatePlayer() {
 function btnDisable(boolean) {
     return boolean;
 }
+
 
 document.getElementById('player-one-btn').addEventListener('click', function () {
     getInputValueById('player-one', 'player-one-btn');
@@ -53,16 +54,24 @@ document.getElementById('player-nine-btn').addEventListener('click', function ()
     getInputValueById('player-nine', 'player-nine-btn');
 })
 
+
+// variable declare
+let totalPlayerExpense = 0;
+
 // calculate total cost code
 document.getElementById('per-player-btn').addEventListener('click', function () {
     const perPlayerCost = document.getElementById('per-player-cost');
-    const getPlayerCost = parseInt(perPlayerCost.value);
-    let totalPlayerCost = getPlayerCost * calculatePlayer();
-    const playerCost = document.getElementById('player-expense');
-    playerCost.innerText = totalPlayerCost;
-    totalPlayerExpense = totalPlayerCost;
-    perPlayerCost.value = '';
-    return totalPlayerCost;
+    if (typeof perPlayerCost == 'number') {
+        let totalPlayerCost = getPlayerCost * calculatePlayer();
+        const playerCost = document.getElementById('player-expense');
+        playerCost.innerText = totalPlayerCost;
+        totalPlayerExpense = totalPlayerCost;
+        perPlayerCost.value = '';
+        return totalPlayerCost;
+    }
+    else {
+        alert('Input type not reconized');
+    }
 })
 
 document.getElementById('total-cost-btn').addEventListener('click', function () {
