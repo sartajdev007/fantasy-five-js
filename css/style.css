@@ -1,4 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Poppins:wght@100;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+.heading {
+    color: #e86311;
+    font-size: 45px;
+}
+
 
 .card img {
     width: 100%;

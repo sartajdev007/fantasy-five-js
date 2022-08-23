@@ -12,7 +12,7 @@ function getInputValueById(playerName, btn) {
         btnDisable.disabled = true;
     }
     else {
-        alert('Cannot add more than 5');
+        alert('Sorry,mate!!Cannot let you add more than 5');
     }
 }
 
@@ -42,6 +42,15 @@ document.getElementById('player-five-btn').addEventListener('click', function ()
 })
 document.getElementById('player-six-btn').addEventListener('click', function () {
     getInputValueById('player-six', 'player-six-btn');
+})
+document.getElementById('player-seven-btn').addEventListener('click', function () {
+    getInputValueById('player-seven', 'player-seven-btn');
+})
+document.getElementById('player-eight-btn').addEventListener('click', function () {
+    getInputValueById('player-eight', 'player-eight-btn');
+})
+document.getElementById('player-nine-btn').addEventListener('click', function () {
+    getInputValueById('player-nine', 'player-nine-btn');
 })
 
 // calculate total cost code
